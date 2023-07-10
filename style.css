@@ -7,6 +7,7 @@ body {
   font-family: 'Open Sans', sans-serif
   background: #222;
   background-image:url("https://source.unsplash.com/1600x900/?landscape");
+  font-size: 120%;
 }
 .card {
   background: #000000d0;
@@ -25,17 +26,31 @@ body {
 .search-bar {
     border: none;
     outline: none;
-    padding: 0.8em;
+    padding: 0.4em 1em;
     border-radius: 18px;
     background: #7c7c7c2b;
     color: white;
     font-family: inherit;
-    font-size: 120%;
+    font-size: 105%;
+    width: calc(100%-50px);
 }
 button {
     margin: 0.5em;
     border-radius: 50%;
     border: none;
-    height: 2.5em;
-    width: 2.5em;
+    height: 40px;
+    width: 40px;
+    background: #7c7c7c2b;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    font-size: 1em;
+}
+
+button:hover {
+    background: #7c7c7c;
+}
+
+h1.temp {
+    margin: 0;
 }
