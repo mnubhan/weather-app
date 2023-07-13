@@ -53,4 +53,16 @@ button:hover {
 
 h1.temp {
     margin: 0;
+    margin-bottom: 0.5em;
+}
+.description {
+    text-transform: capitalize;
+    margin-left: 8px;
+}
+.flex{
+    display:flex;
+    align-items: center;
+}
+h2.city {
+    margin: 0.5em 0em;
 }
