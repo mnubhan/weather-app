@@ -8,6 +8,7 @@ let weather = {
       .then((data) => this.displayWeather(data));
   },
   displayWeather: function (data) {
+    document.querySelector(".weather").classList.remove("loading");
     const { name } = data;
     const { icon, description } = data.weather[0];
     const { temp, humidity } = data.main;
@@ -21,5 +22,20 @@ let weather = {
     document.querySelector(".temp").innerText = `${temp}°C`;
     document.querySelector(".humidity").innerText = `Humidity: ${humidity}%`;
     document.querySelector(".wind").innerText = `Wind speed: ${speed} km/h`;
+    document.body.style.backgroundImage = `url('https://source.unsplash.com/1600x900/?${name}')`
+  },
+  search: function () {
+    let value=document.querySelector(".search-bar").value
+    value != "" ?this.featchWeather(value):document.querySelector(".weather").classList.add("loading");
   },
 };
+
+document.querySelector(".search button").addEventListener("click", function () {
+  weather.search();
+});
+document.querySelector(".search-bar").addEventListener("keyup", function (event){
+  if(event.key == "Enter"){
+    weather.search();
+  }
+})
+console.log(document.querySelector(".search-bar").value)
